@@ -1,0 +1,11 @@
+.todo-text-container {
+    width: 80%;
+}
+
+::ng-deep .mat-checkbox-inner-container {
+    margin-top: 0.5% !important;
+}
+
+h5 {
+    margin-bottom: 2%;
+}

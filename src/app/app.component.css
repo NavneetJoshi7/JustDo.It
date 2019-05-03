@@ -1,0 +1,26 @@
+.body-container {
+    margin: 1% 0;
+    padding: 0;
+}
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    position: fixed;
+    left: 0;
+    background-color: #5c5c5c;
+    overflow-x: hidden;
+}
+
+.sidenav a {
+    padding: 3% 8%;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #e2e2e2;
+    cursor: pointer;
+}

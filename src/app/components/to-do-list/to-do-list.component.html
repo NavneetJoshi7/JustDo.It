@@ -1,0 +1,7 @@
+<h5>To-Do List</h5>
+<div *ngFor="let pending of pendingTasks; trackBy: trackByPendingTasks" class="todo-list">
+    <mat-checkbox>
+        <label (blur)="editTask($event)" contenteditable>{{pending.text}}</label>
+        <img *ngIf="pending.importance === 'Urgent'" src="./../../../assets/icons/urgent_task_icon.svg" title="Urgent">
+    </mat-checkbox>
+</div>
