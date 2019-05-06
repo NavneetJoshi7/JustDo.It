@@ -16,4 +16,10 @@ h5 {
 
 .deleteicon.todolist {
     vertical-align: 16%;
+    margin: 0 4% 0 1%;
+}
+
+.changetag-btn-todolist {
+    padding: 0.2%;
+    margin-bottom: 0.5%;
 }

@@ -24,4 +24,8 @@ export class AppComponent {
     this.todoService.add(event);
   }
 
+  searchTask(event) {
+    this.todoService.search(event);
+  }
+
 }

@@ -13,3 +13,8 @@ h5 {
 .deleteicon:hover {
     cursor: pointer;
 }
+
+.changetag-btn-completed {
+    padding: 0.2%;
+    margin-bottom: 0.5%;
+}

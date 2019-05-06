@@ -12,6 +12,10 @@
     margin: 1% 0;
 }
 
+.todo-text-container {
+    margin-bottom: 1% !important;
+}
+
 .sidenav {
     height: calc(100vh - 50px);
     background-color: #5c5c5c;
@@ -29,5 +33,19 @@
 
 .sidenav a:hover {
     color: #e2e2e2;
+    cursor: pointer;
+}
+
+.search-box {
+    margin-left: 85%;
+    position: relative;
+    top: 2px;
+}
+
+.search-icon {
+    margin-top: 0.5%;
+}
+
+.search-icon:hover {
     cursor: pointer;
 }

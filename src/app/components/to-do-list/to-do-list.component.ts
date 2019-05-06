@@ -1,5 +1,6 @@
+import { AppComponent } from './../../app.component';
 import { ToDoManagerService } from './../../services/to-do-manager.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-to-do-list',
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToDoListComponent implements OnInit {
 
+  @Input() id: string;
   pendingTasks: Array<any>;
+  //isChecked: boolean = false;
 
-  constructor(private todoService: ToDoManagerService) {
+  constructor(appComponent: AppComponent, private todoService: ToDoManagerService) {
+    appComponent.viewingOnlyCompletedTasks = false;
   }
 
   ngOnInit() {
@@ -21,8 +25,21 @@ export class ToDoListComponent implements OnInit {
     return index;
   }
 
+  editTask(event) {
+    this.todoService.edit(event);
+  }
+
   deleteTask(event) {
     this.todoService.delete(event);
+  }
+
+  moveToCompletedTasks(event) {
+    this.todoService.move(event);
+    //this.isChecked = false;
+  }
+
+  changeTag(event) {
+    this.todoService.changeTag(event);
   }
 
 }

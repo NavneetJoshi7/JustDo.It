@@ -1,7 +1,9 @@
 <h5>Completed Tasks List</h5>
 <div class="completed-tasks-list-container">
   <mat-checkbox *ngFor="let complete of completedTaskList; index as i; trackBy: trackByCompletedTasks" checked="true" disabled>
-      <label contenteditable>{{complete.text}}</label>
-      <img src="./../assets/icons/delete_icon.svg" alt="delete_icon" class="deleteicon completedtaskslist" (click)="deleteTask($event)">
+      <label [ngClass]="' '+ i" class="completed-text" (blur)="editTask($event)" contenteditable>{{complete.text}}</label>
+      <img *ngIf="complete.importance === 'Urgent'" src="./../../../assets/icons/urgent_task_icon.svg" title="Urgent">
+      <img src="./../assets/icons/delete_icon.svg" alt="delete_icon" [ngClass]="'delete_'+ i" class="deleteicon completedtaskslist" (click)="deleteTask($event)">
+      <button type="button" [ngClass]="'btn_'+ i" class="btn btn-sm btn-primary changetag-btn-completed" (click)="changeTag($event)">Change Tag</button>
   </mat-checkbox>
 </div>

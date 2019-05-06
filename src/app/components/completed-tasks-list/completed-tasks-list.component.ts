@@ -27,8 +27,16 @@ export class CompletedTasksListComponent implements OnInit {
     return index;
   }
 
+  editTask(event) {
+    this.todoService.edit(event);
+  }
+
   deleteTask(event) {
     this.todoService.delete(event);
+  }
+
+  changeTag(event) {
+    this.todoService.changeTag(event);
   }
 
 }

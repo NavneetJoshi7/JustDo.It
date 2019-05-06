@@ -1,8 +1,9 @@
 <h5>To-Do List</h5>
 <div *ngFor="let pending of pendingTasks; index as i; trackBy: trackByPendingTasks" class="todo-list">
-    <mat-checkbox>
-        <label (blur)="editTask($event)" contenteditable>{{pending.text}}</label>
+    <mat-checkbox [id]=" 'mat-chkbox-' + i" (change)="moveToCompletedTasks($event)">
+        <label [ngClass]="' '+ i" class="pending-text" (blur)="editTask($event)" contenteditable>{{pending.text}}</label>
         <img *ngIf="pending.importance === 'Urgent'" src="./../../../assets/icons/urgent_task_icon.svg" title="Urgent">
     </mat-checkbox>
-    <img src="./../assets/icons/delete_icon.svg" alt="delete_icon" class="deleteicon todolist" (click)="deleteTask($event)">
+    <img src="./../assets/icons/delete_icon.svg" alt="delete_icon" [ngClass]="'delete_'+ i" class="deleteicon todolist" (click)="deleteTask($event)">
+    <button type="button" [ngClass]="'btn_'+ i" class="btn btn-sm btn-primary changetag-btn-todolist" (click)="changeTag($event)">Change Tag</button>
 </div>
