@@ -1,12 +1,19 @@
+.container {
+    margin: 0px !important;
+    padding: 0px !important;
+    max-width: 100% !important;
+}
+
+.row {
+    margin: 0px !important;
+}
+
 .body-container {
     margin: 1% 0;
-    padding: 0;
 }
 
 .sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    position: fixed;
-    left: 0;
+    height: calc(100vh - 50px);
     background-color: #5c5c5c;
     overflow-x: hidden;
 }

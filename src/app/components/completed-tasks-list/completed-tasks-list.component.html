@@ -1,6 +1,7 @@
 <h5>Completed Tasks List</h5>
 <div class="completed-tasks-list-container">
-  <mat-checkbox *ngFor="let complete of completedTaskList" checked="true" disabled>
-      <label>{{complete.text}}</label>
+  <mat-checkbox *ngFor="let complete of completedTaskList; index as i; trackBy: trackByCompletedTasks" checked="true" disabled>
+      <label contenteditable>{{complete.text}}</label>
+      <img src="./../assets/icons/delete_icon.svg" alt="delete_icon" class="deleteicon completedtaskslist" (click)="deleteTask($event)">
   </mat-checkbox>
 </div>

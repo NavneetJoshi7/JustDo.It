@@ -1,3 +1,4 @@
+import { ToDoManagerService } from './services/to-do-manager.service';
 import { appRoutes } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -26,7 +27,7 @@ import { AllTasksComponent } from './components/all-tasks/all-tasks.component';
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ToDoManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

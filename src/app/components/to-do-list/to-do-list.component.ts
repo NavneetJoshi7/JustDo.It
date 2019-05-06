@@ -1,4 +1,4 @@
-import { mockTasks } from './../../constants/mock-tasks-data';
+import { ToDoManagerService } from './../../services/to-do-manager.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,15 +10,19 @@ export class ToDoListComponent implements OnInit {
 
   pendingTasks: Array<any>;
 
-  constructor() {
+  constructor(private todoService: ToDoManagerService) {
   }
 
   ngOnInit() {
-    this.pendingTasks = mockTasks.pending;
+    this.pendingTasks = ToDoManagerService._pendingTasks;
   }
 
   trackByPendingTasks(index, item) {
     return index;
+  }
+
+  deleteTask(event) {
+    this.todoService.delete(event);
   }
 
 }

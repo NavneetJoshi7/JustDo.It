@@ -1,6 +1,7 @@
 import { mockTasks } from './constants/mock-tasks-data';
 import { ConstantValues } from './constants/constant-values';
 import { Component } from '@angular/core';
+import { ToDoManagerService } from './services/to-do-manager.service';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +12,16 @@ export class AppComponent {
   title = 'app';
   viewCategories: Array<any> = ConstantValues.VIEW_CATEGORIES;
   viewingOnlyCompletedTasks: boolean = false;
-  pendingTasks: Array<any>;
+
+  constructor(private todoService: ToDoManagerService) {
+
+  }
 
   ngOnInit() {
   }
 
   addTask(event) {
-    var textToAdd = event.target.value;
-    this.pendingTasks.push({text: textToAdd, importance: ConstantValues.TASKS_NOT_URGENT});
+    this.todoService.add(event);
   }
 
 }

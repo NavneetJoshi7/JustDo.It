@@ -4,14 +4,14 @@
 </nav>
 <div class="container">
     <div class="row">
-        <div class="sidenav col-lg-2 col-md-2 col-sm-2">
-            <a *ngFor="let category of viewCategories" [routerLink]="category.url">{{category.label}}</a>
-        </div>
-        <div class="body-container col-lg-8 col-md-8 col-sm-8">
-            <div class="todo-text-container form-group">
-                <input type="text" class="todo-text form-control" placeholder="Add Task here, Press Enter to Save" maxlength="50" (keyup.enter)="addTask($event)" [disabled]="viewingOnlyCompletedTasks">
+            <div class="sidenav col-lg-3 col-md-3 col-sm-3">
+                <a *ngFor="let category of viewCategories" [routerLink]="category.url">{{category.label}}</a>
             </div>
-            <router-outlet></router-outlet>
-        </div>
-      </div>
+            <div class="body-container col-lg-9 col-md-9 col-sm-9">
+                <div class="todo-text-container form-group row">
+                    <input type="text" class="todo-text form-control col-lg-7 col-md-7 col-sm-7" placeholder="Add Task here, Press Enter to Save" maxlength="50" (keyup.enter)="addTask($event)" [disabled]="viewingOnlyCompletedTasks">
+                </div>
+                <router-outlet></router-outlet>
+            </div>
+    </div>
 </div>

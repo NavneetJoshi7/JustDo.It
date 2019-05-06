@@ -9,3 +9,11 @@
 h5 {
     margin-bottom: 2%;
 }
+
+.deleteicon:hover {
+    cursor: pointer;
+}
+
+.deleteicon.todolist {
+    vertical-align: 16%;
+}

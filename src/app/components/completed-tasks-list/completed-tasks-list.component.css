@@ -5,3 +5,11 @@ mat-checkbox {
 h5 {
     margin-bottom: 2%;
 }
+
+.deleteicon {
+    margin-left: 5%;
+}
+
+.deleteicon:hover {
+    cursor: pointer;
+}
